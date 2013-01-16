@@ -32,7 +32,11 @@ class Tx_TruncateJob_TruncateTask extends tx_scheduler_Task {
 	 * @return array
 	 */
 	public function getTableList() {
-		return explode ( ',', $this->tables );
+		$tables = explode ( ',', $this->tables );
+		if(FALSE === $tables ){
+			return array();
+		}
+		return $tables;
 	}
 	/**
 	 * @return string
