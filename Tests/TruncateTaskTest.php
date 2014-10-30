@@ -2,13 +2,13 @@
 /***************************************************************
  * Copyright notice
  *
- * (c) 2009 AOE media GmbH <dev@aoemedia.de>
+ * (c) 2009 AOE GmbH <dev@aoe.com>
  * All rights reserved
  *
  *
  * This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
-require_once dirname ( __FILE__ ) . '/../Classes/TruncateTask.php';
+
 /**
  * test case for Tx_TruncateJob_TruncateTask
  * @package truncate_job

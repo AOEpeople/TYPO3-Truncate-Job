@@ -15,7 +15,7 @@ $EM_CONF[$_EXTKEY] = array(
 	'description' => 'Scheduler Job to truncate tables',
 	'category' => 'be',
 	'author' => 'Axel Jung',
-	'author_email' => 'axel.jung@aoemedia.de',
+	'author_email' => 'axel.jung@aoe.com',
 	'shy' => '',
 	'dependencies' => '',
 	'conflicts' => '',
@@ -28,12 +28,12 @@ $EM_CONF[$_EXTKEY] = array(
 	'modify_tables' => '',
 	'clearCacheOnLoad' => 0,
 	'lockType' => '',
-	'author_company' => 'AOE Media GmbH',
-	'version' => '0.0.3',
+	'author_company' => 'AOE GmbH',
+	'version' => '0.1.0',
 	'constraints' => array(
 		'depends' => array(
 			'php' => '5.1.0-0.0.0',
-			'typo3' => '4.3.0-0.0.0',
+			'typo3' => '4.7.0-0.0.0',
 		),
 		'conflicts' => array(
 		),

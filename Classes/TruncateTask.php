@@ -2,13 +2,13 @@
 /***************************************************************
  * Copyright notice
  *
- * (c) 2009 AOE media GmbH <dev@aoemedia.de>
+ * (c) 2009 AOE GmbH <dev@aoe.com>
  * All rights reserved
  *
  *
  * This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
-require_once (t3lib_extMgm::extPath ( 'scheduler' ) . 'class.tx_scheduler_task.php');
+
 /**
  * Export Task for sheduler
  * @package truncate_job
