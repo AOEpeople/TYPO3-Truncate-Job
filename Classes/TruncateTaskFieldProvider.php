@@ -12,16 +12,16 @@
 /**
  * Export Task for sheduler
  */
-class tx_TruncateJob_TruncateFieldProvider implements tx_scheduler_AdditionalFieldProvider {
-	/**
-	 * @param array &$taskInfo
-	 * @param Tx_TruncateJob_TruncateTask $task
-	 * @param tx_scheduler_Module $parentObject
-	 * @return array
-	 */
-	public function getAdditionalFields(array &$taskInfo, $task, tx_scheduler_Module $parentObject) {
+class tx_TruncateJob_TruncateFieldProvider implements \TYPO3\CMS\Scheduler\AdditionalFieldProviderInterface {
+    /**
+     * @param array $taskInfo
+     * @param Tx_TruncateJob_TruncateTask $task
+     * @param \TYPO3\CMS\Scheduler\Controller\SchedulerModuleController $schedulerModule
+     * @return array
+     */
+    public function getAdditionalFields(array &$taskInfo, $task, \TYPO3\CMS\Scheduler\Controller\SchedulerModuleController $schedulerModule) {
 		if (empty ( $taskInfo ['tables'] )) {
-			if ($parentObject->CMD == 'edit') {
+			if ($schedulerModule->CMD == 'edit') {
 				$taskInfo ['tables'] = $task->getTables ();
 			} else {
 				$taskInfo ['tables'] = '';
@@ -34,19 +34,21 @@ class tx_TruncateJob_TruncateFieldProvider implements tx_scheduler_AdditionalFie
 		$additionalFields [$fieldID] = array ('code' => $fieldCode, 'label' => 'Tables (Komma seperated)' );
 		return $additionalFields;
 	}
-	/**
-	 * @param array $submittedData
-	 * @param tx_scheduler_Task $task
-	 */
-	public function saveAdditionalFields(array $submittedData, tx_scheduler_Task $task) {
+
+    /**
+     * @param array $submittedData
+     * @param \TYPO3\CMS\Scheduler\Task\AbstractTask $task
+     */
+    public function saveAdditionalFields(array $submittedData, \TYPO3\CMS\Scheduler\Task\AbstractTask $task) {
 		$task->setTables( $submittedData ['tables'] );
 	}
-	/**
-	 * @param array &$submittedData
-	 * @param tx_scheduler_Module $parentObject
-	 * @return boolean
-	 */
-	public function validateAdditionalFields(array &$submittedData, tx_scheduler_Module $parentObject) {
+
+    /**
+     * @param array $submittedData
+     * @param \TYPO3\CMS\Scheduler\Controller\SchedulerModuleController $schedulerModule
+     * @return bool
+     */
+    public function validateAdditionalFields(array &$submittedData, \TYPO3\CMS\Scheduler\Controller\SchedulerModuleController $schedulerModule) {
 		return TRUE;
 	}
 
