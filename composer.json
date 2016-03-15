@@ -1,5 +1,5 @@
 {
-    "name": "typo3-ter/truncate-job",
+    "name": "aoe/truncate-job",
     "description": "Scheduler Job to truncate tables",
     "type": "typo3-cms-extension",
     "homepage": "https://forge.typo3.org/projects/extension-truncate_job",
