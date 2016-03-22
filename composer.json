@@ -29,7 +29,7 @@
         "phpmd/phpmd": "2.2.*"
     },
     "replace": {
-        "truncate-job": "*"
+        "truncate_job": "*"
     },
     "keywords": [
         "TYPO3",
