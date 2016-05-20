@@ -9,11 +9,14 @@
  * This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 
+use TYPO3\CMS\Core\Database\DatabaseConnection;
+use TYPO3\CMS\Scheduler\Task\AbstractTask;
+
 /**
- * Export Task for sheduler
+ * Export Task for scheduler
  * @package truncate_job
  */
-class Tx_TruncateJob_TruncateTask extends tx_scheduler_Task {
+class Tx_TruncateJob_TruncateTask extends AbstractTask {
 	/**
 	 * @var string
 	 */
@@ -52,7 +55,7 @@ class Tx_TruncateJob_TruncateTask extends tx_scheduler_Task {
 		$this->tables = $tables;
 	}
 	/**
-	 * @return t3lib_DB
+	 * @return DatabaseConnection
 	 */
 	public function getDb() {
 		return $GLOBALS ['TYPO3_DB'];

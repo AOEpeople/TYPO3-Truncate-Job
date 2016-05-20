@@ -3,7 +3,7 @@
 	convertErrorsToExceptions="true" convertNoticesToExceptions="true"
 	convertWarningsToExceptions="true">
 	<testsuites>
-		<testsuite name="aoe_survey">
+		<testsuite name="truncate_job">
 			<directory suffix="Test.php">./</directory>
 		</testsuite>
 	</testsuites>

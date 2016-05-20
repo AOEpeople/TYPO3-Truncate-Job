@@ -10,7 +10,7 @@
  ***************************************************************/
 
 /**
- * Export Task for sheduler
+ * Export Task for scheduler
  */
 class tx_TruncateJob_TruncateFieldProvider implements \TYPO3\CMS\Scheduler\AdditionalFieldProviderInterface {
     /**
