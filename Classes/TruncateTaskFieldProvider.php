@@ -29,7 +29,7 @@ class tx_TruncateJob_TruncateFieldProvider implements \TYPO3\CMS\Scheduler\Addit
 		}
 	
 		$fieldID = 'task_tables';
-		$fieldCode = '<input type="text" name="tx_scheduler[tables]" id="' . $fieldID . '" value="'.$taskInfo ['tables'].'" size="30" />';
+		$fieldCode = '<input type="text" name="tx_scheduler[tables]" id="' . $fieldID . '" value="'.$taskInfo ['tables'].'" size="30" class="form-control" />';
 		$additionalFields = array ();
 		$additionalFields [$fieldID] = array ('code' => $fieldCode, 'label' => 'Tables (Komma seperated)' );
 		return $additionalFields;
@@ -40,6 +40,7 @@ class tx_TruncateJob_TruncateFieldProvider implements \TYPO3\CMS\Scheduler\Addit
      * @param \TYPO3\CMS\Scheduler\Task\AbstractTask $task
      */
     public function saveAdditionalFields(array $submittedData, \TYPO3\CMS\Scheduler\Task\AbstractTask $task) {
+        /** @var Tx_TruncateJob_TruncateTask $task */
 		$task->setTables( $submittedData ['tables'] );
 	}
 
@@ -51,5 +52,4 @@ class tx_TruncateJob_TruncateFieldProvider implements \TYPO3\CMS\Scheduler\Addit
     public function validateAdditionalFields(array &$submittedData, \TYPO3\CMS\Scheduler\Controller\SchedulerModuleController $schedulerModule) {
 		return TRUE;
 	}
-
 }
