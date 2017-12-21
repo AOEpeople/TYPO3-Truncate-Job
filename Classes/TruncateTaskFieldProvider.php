@@ -30,7 +30,7 @@ use TYPO3\CMS\Scheduler\AdditionalFieldProviderInterface;
 /**
  * Export Task for scheduler
  */
-class tx_TruncateJob_TruncateFieldProvider implements AdditionalFieldProviderInterface {
+class TruncateTaskFieldProvider implements AdditionalFieldProviderInterface {
     /**
      * @param array $taskInfo
      * @param TruncateTask $task
