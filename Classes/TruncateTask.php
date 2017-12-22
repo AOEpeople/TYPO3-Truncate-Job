@@ -58,7 +58,7 @@ class TruncateTask extends AbstractTask
     {
         $tables = explode(',', $this->tables);
         if (false === $tables) {
-            return array();
+            return [];
         }
         return $tables;
     }
@@ -84,7 +84,7 @@ class TruncateTask extends AbstractTask
      */
     public function getDb()
     {
-        return $GLOBALS ['TYPO3_DB'];
+        return $GLOBALS['TYPO3_DB'];
     }
 
     /**
