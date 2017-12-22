@@ -1,6 +1,8 @@
 <?php
 if (!defined ('TYPO3_MODE')) 	die ('Access denied.');
 
+$_EXTKEY = 'truncate_job';
+
 if (TYPO3_MODE == 'BE') {
 	$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['scheduler']['tasks'][\Aoe\TruncateJob\TruncateTask::class] = array(
 		'extension' => $_EXTKEY,
