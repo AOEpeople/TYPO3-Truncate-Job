@@ -1,4 +1,7 @@
 # TYPO3-Truncate-Job
+[![Build Status](https://api.travis-ci.org/AOEpeople/TYPO3-Truncate-Job.svg?branch=master)](https://travis-ci.org/AOEpeople/TYPO3-Truncate-Job)
+[![Code Coverage](https://scrutinizer-ci.com/g/AOEpeople/TYPO3-Truncate-Job/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/AOEpeople/TYPO3-Truncate-Job/?branch=master)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/AOEpeople/TYPO3-Truncate-Job/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/AOEpeople/TYPO3-Truncate-Job/?branch=master)
 
 This TYPO3-Extension enables you to add a scheduler job to truncate tables.
 
