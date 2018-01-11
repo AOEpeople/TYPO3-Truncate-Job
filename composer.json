@@ -57,6 +57,15 @@
         "post-autoload-dump": [
             "mkdir -p .Build/Web/typo3conf/ext/",
             "[ -L .Build/Web/typo3conf/ext/truncate_job ] || ln -snvf ../../../../. .Build/Web/typo3conf/ext/truncate_job"
+        ],
+        "test:functional": [
+            "[ -e .Build/bin/phpunit ] || composer update",
+            "export \"TYPO3_PATH_WEB\"=$PWD/.Build/Web;",
+            "export typo3DatabaseName=\"typo3\";",
+            "export typo3DatabaseHost=\"localhost\";",
+            "export typo3DatabaseUsername=\"root\";",
+            "export typo3DatabasePassword=\"\";",
+            ".Build/bin/phpunit -c .Build/vendor/nimut/testing-framework/res/Configuration/FunctionalTests.xml Tests/Functional/"
         ]
     },
     "extra": {
