@@ -5,7 +5,7 @@ namespace Aoe\TruncateJob\Tests\Functional;
 /***************************************************************
  *  Copyright notice
  *
- *  (c) 2017 AOE GmbH <dev@aoe.com>
+ *  (c) 2018 AOE GmbH <dev@aoe.com>
  *
  *  All rights reserved
  *
@@ -52,8 +52,6 @@ class TruncateTaskTest extends FunctionalTestCase
      */
     protected function setUp()
     {
-        $GLOBALS['TYPO3_CONF_VARS']['DB']['port'] = 3306;
-
         parent::setUp();
 
         $this->task = new TruncateTask();
