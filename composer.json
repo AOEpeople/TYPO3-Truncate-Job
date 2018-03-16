@@ -2,12 +2,12 @@
     "name": "aoe/truncate-job",
     "description": "Scheduler Job to truncate tables",
     "type": "typo3-cms-extension",
-    "homepage": "https://forge.typo3.org/projects/extension-truncate_job",
+    "homepage": "https://github.com/AOEpeople/TYPO3-Truncate-Job",
     "license": "GPL-3.0",
     "support": {
         "email": "dev@aoe.com",
-        "issues": "https://forge.typo3.org/projects/extension-truncate_job/issues",
-        "source": "https://forge.typo3.org/projects/extension-truncate_job"
+        "issues": "https://github.com/AOEpeople/TYPO3-Truncate-Job/issues",
+        "source": "https://github.com/AOEpeople/TYPO3-Truncate-Job"
     },
     "authors": [
         {
@@ -16,28 +16,61 @@
             "homepage": "http://www.aoe.com"
         }
     ],
-    "config": {
-        "secure-http": false
-    },
     "require": {
-        "php": ">=5.1.0",
-        "typo3/cms-core": ">=6.2.0,<=7.6.99"
+        "php": ">=5.5.0",
+        "typo3/cms-core": ">=7.6.0"
     },
     "require-dev": {
-        "typo3/cms": "^6.2",
-        "phpunit/phpunit": "4.8.*",
+        "typo3/cms": "^7.6",
+        "nimut/testing-framework": "^2.0.0",
         "phpunit/phpcov": "2.0.*",
         "squizlabs/php_codesniffer": "2.3.*",
         "sebastian/phpcpd": "2.0.*",
         "phpmd/phpmd": "2.2.*"
     },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://composer.typo3.org/"
+        }
+    ],
     "autoload": {
-        "classmap": [
-            "Classes"
-        ]
+        "psr-4": {
+            "Aoe\\TruncateJob\\": "Classes/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Aoe\\TruncateJob\\Tests\\": "Tests",
+            "TYPO3\\CMS\\Core\\Tests\\": ".Build/vendor/typo3/cms/typo3/sysext/core/Tests/"
+        }
     },
     "replace": {
         "truncate_job": "*"
+    },
+    "config": {
+        "secure-http": false,
+        "vendor-dir": ".Build/vendor",
+        "bin-dir": ".Build/bin"
+    },
+    "scripts": {
+        "post-autoload-dump": [
+            "mkdir -p .Build/Web/typo3conf/ext/",
+            "[ -L .Build/Web/typo3conf/ext/truncate_job ] || ln -snvf ../../../../. .Build/Web/typo3conf/ext/truncate_job"
+        ],
+        "test:functional": [
+            "[ -e .Build/bin/phpunit ] || composer update",
+            "TYPO3_PATH_ROOT=$(pwd)/.Build/Web .Build/bin/phpunit -c .Build/vendor/nimut/testing-framework/res/Configuration/FunctionalTests.xml Tests/Functional/"
+        ]
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0.0-dev"
+        },
+        "typo3/cms": {
+            "cms-package-dir": "{$vendor-dir}/typo3/cms",
+            "web-dir": ".Build/Web"
+        }
     },
     "keywords": [
         "TYPO3",
