@@ -1,5 +1,4 @@
 <?php
-
 namespace Aoe\TruncateJob;
 
 /***************************************************************
@@ -94,7 +93,7 @@ class TruncateTask extends AbstractTask
     private function truncateTable($table)
     {
         if (false === $this->getDb()->exec_TRUNCATEquery($table)) {
-            throw new \Exception ('Truncate of table ' . $table . ' failed ');
+            throw new \Exception('Truncate of table ' . $table . ' failed');
         }
     }
 }

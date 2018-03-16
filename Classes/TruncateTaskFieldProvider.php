@@ -38,9 +38,9 @@ class TruncateTaskFieldProvider implements AdditionalFieldProviderInterface {
      * @return array
      */
     public function getAdditionalFields(array &$taskInfo, $task, \TYPO3\CMS\Scheduler\Controller\SchedulerModuleController $schedulerModule) {
-		if (empty($taskInfo ['tables'])) {
+		if (empty($taskInfo['tables'])) {
 			if ($schedulerModule->CMD == 'edit') {
-				$taskInfo['tables'] = $task->getTables ();
+				$taskInfo['tables'] = $task->getTables();
 			} else {
 				$taskInfo['tables'] = '';
 			}
@@ -59,7 +59,7 @@ class TruncateTaskFieldProvider implements AdditionalFieldProviderInterface {
      */
     public function saveAdditionalFields(array $submittedData, \TYPO3\CMS\Scheduler\Task\AbstractTask $task) {
         /** @var TruncateTask $task */
-		$task->setTables($submittedData ['tables']);
+		$task->setTables($submittedData['tables']);
 	}
 
     /**
